@@ -15,7 +15,7 @@ data=[]
 ss=requests.session()
 
 
-for l in range(0,1):
+for l in range(0,3):
     res =None 
     while True:
         try:
@@ -56,6 +56,7 @@ for l in range(0,1):
             
         except IndexError as e:
             print(i)
+    url = 'https://www.ptt.cc' + soup.select('div[class="btn-group btn-group-paging"]')[0].select('a')[1]['href']
         
 df =pd.DataFrame(data=data,columns=columns)
 df    
